@@ -83,6 +83,7 @@ This project is licensed under the **MIT License** — see the [LICENSE](./LICEN
 **Darshan Aguru**
 React Native Developer • AWS Certified Solutions Architect
 GitHub: [@DarshanAguru](https://github.com/DarshanAguru)
+Portfolio: [DarshanAguru](https://agurudarshan.tech)
 
 ---
 
