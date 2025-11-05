@@ -3,7 +3,6 @@
 A lightweight, customizable utility component pack for React Native, designed to simplify UI development with reusable and well-typed components like `Label`, `Input` and more...
 
 ![npm](https://img.shields.io/npm/v/react-native-utility-kit?color=blue&label=version)
-![license](https://img.shields.io/npm/l/react-native-utility-kit)
 ![platforms](https://img.shields.io/badge/platforms-Android%20%7C%20iOS-green)
 ![typescript](https://img.shields.io/badge/TypeScript-Ready-blue)
 
