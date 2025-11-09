@@ -1,3 +1,4 @@
-export * from './TextComponents';
-export * from "./TouchableComponents";
-export * from './Wrappers';
+export * from './textComponents';
+export * from "./touchableComponents";
+export * from './wrappers';
+export * from './contexts';

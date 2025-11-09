@@ -6,7 +6,7 @@ import {
 } from "react-native";
 import { gettextInputStyles} from "./textInput.styles";
 import type { TextInputProps } from "./types";
-import { defaultTheme } from "../theme";
+import { ThemedColorPreset } from "../../themes";
 
 const Input: React.FC<TextInputProps> = ({
   label,
@@ -23,7 +23,7 @@ const Input: React.FC<TextInputProps> = ({
   containerStyle,
   errorMessage, 
   keyboarType = "default",
-  customStyles = defaultTheme,
+  customStyles = ThemedColorPreset.LightTheme,
   dir = 'ltr',
 }) => {
   const styles = gettextInputStyles(customStyles,dir);
