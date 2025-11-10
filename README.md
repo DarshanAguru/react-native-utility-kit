@@ -41,9 +41,10 @@ npm install react-native-safe-area-context
 
 ## 🧱 Categories
 
-  1. [Text Components](./src/TextComponents/README.md)
-  2. [Touchable Components](./src/TouchableComponents/README.md)
-  3. [Wrappers](./src/Wrappers/README.md)
+  1. [Text Components](./src/components/textComponents/README.md)
+  2. [Touchable Components](./src/components/touchableComponents/README.md)
+  3. [Wrappers](./src/components/wrappers/README.md)
+  4. [Contexts](./src/contexts/README.md)
 
 ---
 
