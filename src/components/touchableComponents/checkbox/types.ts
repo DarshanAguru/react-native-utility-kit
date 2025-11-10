@@ -1,4 +1,5 @@
 
+
 export interface CheckboxProps {
   value: boolean;
   onValueChange: (value: boolean) => void;
@@ -6,4 +7,5 @@ export interface CheckboxProps {
   children?: React.ReactNode;
   checkboxColor?:string;
   checkboxSize?:number;
+  iconName?:'circle'|'circleFilled'|'square'|'squareFilled'|'shield'|'shieldFilled'|'tick';
 }

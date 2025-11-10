@@ -1,13 +1,8 @@
 import type { KeyboardTypeOptions, StyleProp, TextStyle, ViewStyle } from "react-native";
+import type { ThemePreset } from "../../../themes";
 
 
-export interface customStyleProps {
-  primaryColor?: string;
-  secondaryColor?: string;
-  borderColor?: string;
-  fontFamily?: string;
-  fontFamilyLabel?: string;
-}
+export type customStyleProps = Partial<ThemePreset>;
 
 export type customStyleType = customStyleProps;
 export type dirType = "rtl"|"ltr";
@@ -29,4 +24,5 @@ export interface TextInputProps {
   keyboarType?: KeyboardTypeOptions;
   customStyles?: customStyleProps;
   dir?:"rtl"|"ltr";
+  autoTheming?:boolean;
 }

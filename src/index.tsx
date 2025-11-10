@@ -1,4 +1,4 @@
-export * from './textComponents';
-export * from "./touchableComponents";
-export * from './wrappers';
+export * from './components/textComponents';
+export * from "./components/touchableComponents";
+export * from './components/wrappers';
 export * from './contexts';

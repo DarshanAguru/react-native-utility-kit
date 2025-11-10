@@ -1,22 +1,12 @@
-import {ThemedColorPreset} from '../../themes'
+import {ThemedColorPreset, type ThemePreset} from '../../themes'
 import { PersistStorage } from '../../utils';
-import React, { type ReactNode, useContext, useEffect, useMemo, useState } from 'react';
+import { useContext, useEffect, useMemo, useState } from 'react';
 import { createContext } from "react";
 import { useColorScheme } from 'react-native';
-import { KEYS, type StoreType } from '../../utils';
+import { KEYS } from '../../utils';
 import { ScaledSheet } from 'react-native-size-matters';
+import type { IThemeProvider, ThemeContextType, ThemeNamesChoice } from './types';
 
-
-
-type ThemeType = typeof ThemedColorPreset.LightTheme
-
-export type ThemeNamesChoice = "light"|"dark"|"systemDefault";
-
-interface ThemeContextType {
-    theme: ThemeType;
-    setTheme: (themeName: ThemeNamesChoice) => void;
-    themeMode: string|undefined;
-}
 
 const ThemeContext = createContext<ThemeContextType>({
     theme: ThemedColorPreset.LightTheme,
@@ -24,20 +14,36 @@ const ThemeContext = createContext<ThemeContextType>({
     themeMode:"light",
 });
 
-export interface IThemeProvider{
-    storage: any;
-    storageType: StoreType;
-    children: ReactNode;
-}
-
-export const ThemeProvider = ({storage, storageType, children}: IThemeProvider) => {
+/**
+ * ThemeProvider
+ * Inject into your app once. Manages the theme lifecycle:
+ * - Reads saved mode from storage on mount.
+ * - Applies system color scheme if mode === "systemDefault".
+ * - Persists changes to storage under KEYS.APP_THEME.
+ *
+ * @param storage - storage backend instance (e.g., AsyncStorage)
+ * @param storageType - storage adapter type used by PersistStorage
+ * @param children - React nodes to render under the provider
+ * @param Themes - optional overrides for LightTheme and DarkTheme
+ *
+ * @example
+ * <ThemeProvider storage={AsyncStorage} storageType="async" Themes={ThemedColorPreset}>
+ *   <App />
+ * </ThemeProvider>
+ */
+export const ThemeProvider = ({
+    Themes = ThemedColorPreset,
+    storage,
+    storageType,
+    children
+}: IThemeProvider) => {
     const Store = PersistStorage(storage,storageType);
     const systemColorScheme = useColorScheme();
-    const [theme, setTheme] = useState<ThemeType>(ThemedColorPreset.LightTheme);
+    const [theme, setTheme] = useState<ThemePreset>(Themes.LightTheme);
     const [themeMode, setThemeMode] = useState<ThemeNamesChoice|undefined>("light");
 
     const applyTheme = async (themeName: ThemeNamesChoice) => {
-       console.log('apply_theme: ', themeName)
+    //    console.log('apply_theme: ', themeName)
        let theme:string = themeName;
        if(themeName === "systemDefault")
        {
@@ -48,13 +54,13 @@ export const ThemeProvider = ({storage, storageType, children}: IThemeProvider) 
        }
         switch (theme) {
             case 'light':
-                setTheme(ThemedColorPreset.LightTheme);
+                setTheme(Themes.LightTheme);
                 break;
             case 'dark':
-                setTheme(ThemedColorPreset.DarkTheme);
+                setTheme(Themes.DarkTheme);
                 break;
             default:
-                setTheme(ThemedColorPreset.LightTheme);
+                setTheme(Themes.LightTheme);
                 break;
         }
         await Store.setItem(KEYS.APP_THEME, themeName);
@@ -79,6 +85,19 @@ export const ThemeProvider = ({storage, storageType, children}: IThemeProvider) 
     )
 }
 
+
+
+/**
+ * useCustomTheme
+ * Hook to access current theme and change the mode.
+ *
+ * @returns { theme, setTheme, themeMode }
+ *
+ * @throws Error if called outside ThemeProvider
+ *
+ * @example
+ * const { theme, setTheme, themeMode } = useCustomTheme();
+ */
 export const useCustomTheme = ()=>{
     let ctx = useContext(ThemeContext);
     if(!ctx)
@@ -88,6 +107,19 @@ export const useCustomTheme = ()=>{
     return ctx;
 }
 
+
+/**
+ * useThemedStyles
+ * Hook to create ScaledSheet styles that react to theme changes.
+ *
+ * @param styleFn - receives ThemePreset and returns style object
+ * @returns ScaledSheet
+ *
+ * @example
+ * const styles = useThemedStyles((t) => ({
+ *   container: { backgroundColor: t.backgroundColor, padding: '16@s' },
+ * }));
+ */
 export const useThemedStyles = (styleFn: (theme: any) => any) => {
   const { theme } = useContext(ThemeContext);
   return useMemo(

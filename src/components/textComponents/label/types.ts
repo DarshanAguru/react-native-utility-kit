@@ -14,4 +14,5 @@ export type LabelProps = {
   style?: StyleProp<TextStyle>;
   onPress?: () => void;
   autoScaling?: boolean;
+  autoTheming?: boolean;
 };
