@@ -10,7 +10,7 @@ This guide will help you set up, develop, and contribute effectively.
 ### 1. Fork the Repository
 Click **Fork** on GitHub and clone your fork locally:
 ```bash
-git clone https://github.com/<your-username>/react-native-utility-kit.git
+git clone https://github.com/DarshanAguru/react-native-utility-kit.git
 cd react-native-utility-kit
 ```
 
