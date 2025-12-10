@@ -12,9 +12,11 @@ Perfect for creating **clean, readable, and scalable interfaces** in your React 
 
 ## 🧱 Available Components
 
-1️⃣ [**Button**](./button/README.md)
-2️⃣ [**Checkbox**](./checkbox/README.md)
-3️⃣ [**Tappable**](./tappable/README.md)
+1️⃣ [**Button**](./button/README.md) \
+2️⃣ [**Checkbox**](./checkbox/README.md) \
+3️⃣ [**Tappable**](./tappable/README.md) \
+4️⃣ [**Carousel**](./carousel/README.md) \
+5️⃣ [**Dropdown**](./dropdown/README.md)
 
 ---
 

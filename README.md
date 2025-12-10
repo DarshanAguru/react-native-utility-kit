@@ -30,8 +30,7 @@ yarn add react-native-utility-kit
 Also install peer dependencies (if not already):
 ```bash
 npm install react-native-size-matters
-npm install react-native-vector-icons
-npm install --save-dev @types/react-native-vector-icons
+npm install @react-native-vector-icons/ionicons
 npm install react-native-keyboard-aware-scroll-view
 npm install react-native-gesture-handler
 npm install react-native-safe-area-context
