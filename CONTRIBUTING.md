@@ -39,8 +39,9 @@ react-native-utility-kit/
 │
 ├── src/
 │   ├── components/
-│   │   ├── Input.tsx
-│   │   └── Label.tsx
+│   ├── contexts/
+│   ├── themes/
+|   ├── utils/
 │   └── index.ts
 │
 ├── example/                # Example app using the library
