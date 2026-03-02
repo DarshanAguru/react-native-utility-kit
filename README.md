@@ -86,14 +86,6 @@ Portfolio: [DarshanAguru](https://agurudarshan.tech)
 
 ---
 
-## 👥 Contributors
-This project exists thanks to all the people who contribute.
-
-<a href="https://github.com/DarshanAguru/react-native-utility-kit/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=DarshanAguru/react-native-utility-kit" />
-</a>
-<br/>
-
 ## ⭐ Support
 
 If you find this library useful, give it a ⭐ on [GitHub](https://github.com/DarshanAguru/react-native-utility-kit)!
