@@ -21,7 +21,7 @@ export const getRegisterFormStyles = (customStyle: customStyleProps, dir: dirTyp
         linkText: {
             fontSize: ms(14),
             fontFamily: customStyle?.fontFamily,
-            color: customStyle?.primaryAccent,
+            color: customStyle?.secondaryColor,
             textAlign: "center",
             writingDirection: dir,
         },

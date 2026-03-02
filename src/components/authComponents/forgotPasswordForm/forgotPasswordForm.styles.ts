@@ -11,7 +11,7 @@ export const getForgotPasswordFormStyles = (customStyle: customStyleProps, dir: 
         instructionText: {
             fontSize: ms(14),
             fontFamily: customStyle?.fontFamily,
-            color: customStyle?.primaryAccent,
+            color: customStyle?.primaryColor,
             marginBottom: "24@s",
             textAlign: dir === "rtl" ? "right" : "left",
             writingDirection: dir,
@@ -29,7 +29,7 @@ export const getForgotPasswordFormStyles = (customStyle: customStyleProps, dir: 
         linkText: {
             fontSize: ms(14),
             fontFamily: customStyle?.fontFamily,
-            color: customStyle?.primaryAccent,
+            color: customStyle?.secondaryColor,
             textAlign: "center",
             writingDirection: dir,
         },

@@ -1,5 +1,5 @@
 import type { StyleProp, ViewStyle, TextStyle } from "react-native";
-import type { ThemePreset } from "../../../../themes";
+import type { ThemePreset } from "../../../themes";
 
 export type customStyleProps = Partial<ThemePreset>;
 export type customStyleType = customStyleProps;

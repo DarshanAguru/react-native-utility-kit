@@ -21,7 +21,7 @@ export const getLoginFormStyles = (customStyle: customStyleProps, dir: dirType) 
         linkText: {
             fontSize: ms(14),
             fontFamily: customStyle?.fontFamily,
-            color: customStyle?.primaryAccent,
+            color: customStyle?.secondaryColor,
             textAlign: dir === "rtl" ? "right" : "left",
             writingDirection: dir,
         },

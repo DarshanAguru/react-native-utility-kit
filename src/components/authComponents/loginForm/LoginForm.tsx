@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { View, TouchableOpacity, useColorScheme, Text } from "react-native";
 import { getLoginFormStyles } from "./loginForm.styles";
 import type { LoginFormProps } from "./types";
-import { ThemedColorPreset } from "../../../../themes";
+import { ThemedColorPreset } from "../../../themes";
 import { Input } from "../../textComponents/textInput";
 import { Button } from "../../touchableComponents/button";
 
@@ -136,8 +136,8 @@ export const LoginForm: React.FC<LoginFormProps> = ({
                 <Button
                     title={submitButtonText}
                     onPress={handleSubmit}
-                    backgroundColor={activeStyles?.primaryAccent}
-                    textColor={activeStyles?.buttonTextColor || "#fff"}
+                    backgroundColor={activeStyles?.primaryColor}
+                    textColor={activeStyles?.backgroundColor || "#fff"}
                     style={{ width: "100%" }}
                 />
             </View>

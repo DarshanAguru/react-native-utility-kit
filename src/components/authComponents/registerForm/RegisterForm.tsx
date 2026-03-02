@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { View, TouchableOpacity, useColorScheme, Text } from "react-native";
 import { getRegisterFormStyles } from "./registerForm.styles";
 import type { RegisterFormProps } from "./types";
-import { ThemedColorPreset } from "../../../../themes";
+import { ThemedColorPreset } from "../../../themes";
 import { Input } from "../../textComponents/textInput";
 import { Button } from "../../touchableComponents/button";
 
@@ -173,8 +173,8 @@ export const RegisterForm: React.FC<RegisterFormProps> = ({
                 <Button
                     title={submitButtonText}
                     onPress={handleSubmit}
-                    backgroundColor={activeStyles?.primaryAccent}
-                    textColor={activeStyles?.buttonTextColor || "#fff"}
+                    backgroundColor={activeStyles?.primaryColor}
+                    textColor={activeStyles?.backgroundColor || "#fff"}
                     style={{ width: "100%" }}
                 />
             </View>
